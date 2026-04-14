@@ -4,7 +4,7 @@ import { Link } from "react-router";
 const AllCard = ({ friend }) => {
   console.log(friend);
   return (
-    <div>
+    <div className="w-full max-w-[320px]">
       <Link className="card bg-base-100 w-full shadow-sm space-y-3 rounded-2xl flex flex-col h-full">
         <figure className="px-10 pt-10">
           <img src={friend.picture} alt="Person" className="w-32 h-32 rounded-full object-cover" />
