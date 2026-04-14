@@ -13,7 +13,7 @@ const AllFriends = () => {
         <div className='container mx-auto'>
             <h2 className="font-semibold text-xl mb-4">Your Friends</h2>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {
                     friends.map(friend => <AllCard key={friend.id} friend={friend}></AllCard>)
                 }
