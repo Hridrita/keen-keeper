@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Michael Scott",
+    "picture": "https://example.com/michael-scott.jpg",
+    "email": "worldsbestboss@dundermifflin.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["work", "clueless"],
+    "bio": "Regional Manager of Dunder Mifflin Scranton. Thinks he's my best friend. Keep getting invited to 'Threat Level Midnight' screenings.",
+    "goal": 30,
+    "next_due_date": "2026-03-30"
+  },
+  {
+    "id": 2,
+    "name": "Chandler Bing",
+    "picture": "https://example.com/chandler-bing.jpg",
+    "email": "misschanandlerbong@gmail.com",
+    "days_since_contact": 2,
+    "status": "on-track",
+    "tags": ["sarcastic", "close friend"],
+    "bio": "Could he BE any later for lunch? Met through a mutual friend at Central Perk. Always makes jokes when he's uncomfortable.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 3,
+    "name": "Ron Swanson",
+    "picture": "https://example.com/ron-swanson.jpg",
+    "email": "none@none.com",
+    "days_since_contact": 150,
+    "status": "overdue",
+    "tags": ["woodworking", "meat"],
+    "bio": "Doesn't believe in technology or communication. Only reached out once to ask where to buy high-quality land mines.",
+    "goal": 365,
+    "next_due_date": "2025-11-15"
+  },
+  {
+    "id": 4,
+    "name": "Jake Peralta",
+    "picture": "https://example.com/jake-peralta.jpg",
+    "email": "diehardfan1@nypd.gov",
+    "days_since_contact": 8,
+    "status": "almost due",
+    "tags": ["detective", "childish"],
+    "bio": "Great detective, slash genius. Still owes me $20 for a pizza we shared in 2022. Title of his sex tape.",
+    "goal": 10,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 5,
+    "name": "Phil Dunphy",
+    "picture": "https://example.com/phil-dunphy.jpg",
+    "email": "phil@dunphyrealestate.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["realtor", "magic"],
+    "bio": "The 'cool dad.' Tried to teach me 'Phil's-osophy' while doing a magic trick. Always has a positive attitude.",
+    "goal": 14,
+    "next_due_date": "2026-04-23"
+  },
+  {
+    "id": 6,
+    "name": "Sheldon Cooper",
+    "picture": "https://example.com/sheldon-cooper.jpg",
+    "email": "s.cooper@caltech.edu",
+    "days_since_contact": 20,
+    "status": "almost due",
+    "tags": ["science", "annoying"],
+    "bio": "Bazinga! He has a strict roommate agreement and requires 72 hours notice before any social interaction.",
+    "goal": 21,
+    "next_due_date": "2026-04-15"
+  },
+  {
+    "id": 7,
+    "name": "Joey Tribbiani",
+    "picture": "https://example.com/joey-tribbiani.jpg",
+    "email": "drdrake_ramoray@acting.com",
+    "days_since_contact": 1,
+    "status": "on-track",
+    "tags": ["actor", "foodie"],
+    "bio": "How you doin'? Only calls when he wants to know if I'm finished with my sandwich. Does not share food.",
+    "goal": 3,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 8,
+    "name": "Barney Stinson",
+    "picture": "https://example.com/barney-stinson.jpg",
+    "email": "suitup@legendary.com",
+    "days_since_contact": 60,
+    "status": "overdue",
+    "tags": ["suits", "wingman"],
+    "bio": "It's going to be legen—wait for it—dary! He keeps trying to get me to play Laser Tag on a work night.",
+    "goal": 30,
+    "next_due_date": "2026-03-15"
+  },
+  {
+    "id": 9,
+    "name": "Cosmo Kramer",
+    "picture": "https://example.com/kramer.jpg",
+    "email": "kramerica@industries.net",
+    "days_since_contact": 12,
+    "status": "almost due",
+    "tags": ["neighbor", "eccentric"],
+    "bio": "Sliding into my apartment unannounced since 1989. Currently working on a coffee table book about coffee tables.",
+    "goal": 14,
+    "next_due_date": "2026-04-16"
+  }
+]
