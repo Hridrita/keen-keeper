@@ -3,9 +3,9 @@ import { FaPlus } from "react-icons/fa6";
 
 const Home = () => {
   return (
-    <div className="container mx-auto my-20">
+    <div className="container mx-auto my-20 px-4 md:px-10">
       <div>
-        <h2 className="text-center font-bold text-5xl">
+        <h2 className="text-center font-bold text-3xl md:text-5xl">
           Friends to keep close in your life
         </h2>
         <p className="max-w-lg mx-auto text-center text-[#64748bFF] my-4">
@@ -19,22 +19,22 @@ const Home = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 my-20">
-        <div  className="bg-base-100 shadow-sm w-full text-center p-6 space-y-3">
+        <div  className="bg-base-100 shadow-md border border-gray-100 rounded-xl text-center p-8 space-y-3">
           <h2 className="font-bold text-2xl text-[#244D3f]">10</h2>
           <p className="text-[#64748bFF]">Total Friends</p>
         </div>
 
-        <div className="bg-base-100 shadow-sm w-full text-center p-6 space-y-3">
+        <div className="bg-base-100 shadow-md border border-gray-100 rounded-xl text-center p-8 space-y-3">
           <h2 className="font-bold text-2xl text-[#244D3f]">3</h2>
           <p className="text-[#64748bFF]">On Track</p>
         </div>
 
-        <div className="bg-base-100 shadow-sm w-full text-center p-6 space-y-3">
+        <div className="bg-base-100 shadow-md border border-gray-100 rounded-xl text-center p-8 space-y-3">
           <h2 className="font-bold text-2xl text-[#244D3f]">6</h2>
           <p className="text-[#64748bFF]">Need Attention</p>
         </div>
 
-        <div className="bg-base-100 shadow-sm w-full text-center p-6 space-y-3">
+        <div className="bg-base-100 shadow-md border border-gray-100 rounded-xl text-center p-8 space-y-3">
           <h2 className="font-bold text-2xl text-[#244D3f]">12</h2>
           <p className="text-[#64748bFF]">Interactions This Month</p>
         </div>
