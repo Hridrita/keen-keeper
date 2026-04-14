@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 import {
   FiPhone,
@@ -9,6 +9,7 @@ import {
   FiClock,
 } from "react-icons/fi"; 
 import { toast } from "react-toastify";
+import { friendContext } from "../Context/FriendContext";
 
 const FriendDetails = () => {
   const { id } = useParams();
@@ -30,34 +31,7 @@ const FriendDetails = () => {
     next_due_date,
   } = expextedFriend;
 
-  const [timeline, setTimeline] = useState([]);
-
-  const handleTimelineCall = (currentfriend) =>{
-    console.log(currentfriend);
-     
-    toast.success(`Call with ${name}`);
-    setTimeline([...timeline, currentfriend]);
-    console.log(timeline);
-  };
-
-  const handleTimelineText = (currentfriend) =>{
-    console.log(currentfriend);
-     
-    toast.success(`Text with ${name}`);
-    setTimeline([...timeline, currentfriend]);
-    console.log(timeline);
-  };
-
-  const handleTimelineVideo = (currentfriend) =>{
-    console.log(currentfriend);
-     
-    toast.success(`Video with ${name}`);
-    setTimeline([...timeline, currentfriend]);
-    console.log(timeline);
-  };
-
-    
-  
+  const {handleTimelineCall, handleTimelineText, handleTimelineVideo} = useContext(friendContext);
 
   return (
     <div className="bg-gray-50 min-h-screen py-10 px-4">
