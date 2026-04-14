@@ -6,7 +6,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 const Footer = () => {
   return (
     <div className="bg-[#244d3fFF] text-center">
-      <div className="container mx-auto p-6 md:p-12 space-y-6 md:space-y-8">
+      <div className="container mx-auto p-6 md:p-12 space-y-6 md:space-y-8 max-w-7xl">
         <h2 className="text-white font-bold text-3xl md:text-5xl">KeenKeeper</h2>
         <p className="text-white text-sm md:text-base">
           Your personal shelf of meaningful connections. Browse, tend, and

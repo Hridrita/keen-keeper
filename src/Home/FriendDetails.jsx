@@ -1,5 +1,5 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import React, { useState } from "react";
+import { Link, useLoaderData, useParams } from "react-router";
 import {
   FiPhone,
   FiMessageSquare,
@@ -7,16 +7,18 @@ import {
   FiTrash2,
   FiArchive,
   FiClock,
-} from "react-icons/fi"; // Icons use korle sundor lagbe
+} from "react-icons/fi"; 
+import { toast } from "react-toastify";
 
 const FriendDetails = () => {
   const { id } = useParams();
   const friends = useLoaderData();
   const expextedFriend = friends.find((friend) => friend.fid == id);
 
-  if (!expextedFriend) return <div>Loading...</div>;
+  
 
-  const {
+  const { 
+    fid,
     name,
     picture,
     email,
@@ -28,9 +30,38 @@ const FriendDetails = () => {
     next_due_date,
   } = expextedFriend;
 
+  const [timeline, setTimeline] = useState([]);
+
+  const handleTimelineCall = (currentfriend) =>{
+    console.log(currentfriend);
+     
+    toast.success(`Call with ${name}`);
+    setTimeline([...timeline, currentfriend]);
+    console.log(timeline);
+  };
+
+  const handleTimelineText = (currentfriend) =>{
+    console.log(currentfriend);
+     
+    toast.success(`Text with ${name}`);
+    setTimeline([...timeline, currentfriend]);
+    console.log(timeline);
+  };
+
+  const handleTimelineVideo = (currentfriend) =>{
+    console.log(currentfriend);
+     
+    toast.success(`Video with ${name}`);
+    setTimeline([...timeline, currentfriend]);
+    console.log(timeline);
+  };
+
+    
+  
+
   return (
     <div className="bg-gray-50 min-h-screen py-10 px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl">
         <div className="md:col-span-3 space-y-4">
           <div className="bg-white p-6 rounded-2xl shadow-sm text-center border border-gray-100">
             <img
@@ -62,15 +93,15 @@ const FriendDetails = () => {
           </div>
 
           <div className="space-y-2">
-            <button className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-gray-700 hover:bg-gray-50 transition font-medium">
+            <div className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-gray-700 hover:bg-gray-50 transition font-medium">
               <FiClock /> Snooze 2 Weeks
-            </button>
-            <button className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-gray-700 hover:bg-gray-50 transition font-medium">
+            </div>
+            <div className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-gray-700 hover:bg-gray-50 transition font-medium">
               <FiArchive /> Archive
-            </button>
-            <button className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-red-500 hover:bg-red-50 transition font-medium">
+            </div>
+            <div className="w-full flex items-center justify-center gap-2 bg-white py-3 rounded-xl shadow-sm border border-gray-50 text-red-500 hover:bg-red-50 transition font-medium">
               <FiTrash2 /> Delete
-            </button>
+            </div>
           </div>
         </div>
 
@@ -108,18 +139,20 @@ const FriendDetails = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-4">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
+            <button onClick={() => handleTimelineCall(expextedFriend)} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
               <FiPhone className="text-2xl text-gray-600" />
               <span className="text-sm font-medium">Call</span>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
+            </button>
+
+            <button onClick={() => handleTimelineText(expextedFriend)} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
               <FiMessageSquare className="text-2xl text-gray-600" />
               <span className="text-sm font-medium">Text</span>
-            </div>
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
+            </button>
+
+            <button onClick={() => handleTimelineVideo(expextedFriend)}  className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center gap-2 cursor-pointer hover:bg-gray-50 transition">
               <FiVideo className="text-2xl text-gray-600" />
               <span className="text-sm font-medium">Video</span>
-            </div>
+            </button>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
@@ -156,6 +189,8 @@ const FriendDetails = () => {
       </div>
     </div>
   );
+
 };
+
 
 export default FriendDetails;
