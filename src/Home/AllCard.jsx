@@ -1,21 +1,24 @@
 import React from "react";
+import { Link } from "react-router";
 
 const AllCard = ({ friend }) => {
   console.log(friend);
   return (
     <div>
-      <div className="card bg-base-100 w-full shadow-sm">
+      <Link className="card bg-base-100 w-full shadow-sm space-y-3">
         <figure className="px-10 pt-10">
-          <img src={friend.picture} alt="Person" className="rounded-full" />
+          <img src={friend.picture} alt="Person" className="w-32 h-32 rounded-full object-cover border-4 border-gray-50 shadow-sm" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">{friend.name}</h2>
           <p className="text-[#64748bFF]">{friend.days_since_contact}d ago</p>
 
-          <div className="flex justify-between gap-3">
-            {friend.tags.map((tag, ind) => (
-              <h2 key={ind}>{tag}</h2>
-            ))}
+          <div className="flex justify-between gap-2">
+            {
+            friend.tags.map((tag, ind) => (
+              <h2 key={ind} className="bg-[#dcfce7] text-[#166534] px-3 py-1 rounded-full font-semibold uppercase">{tag}</h2>
+            ))
+            }
           </div>
           <div className="card-actions">
             <button
@@ -29,7 +32,7 @@ const AllCard = ({ friend }) => {
             </button>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
