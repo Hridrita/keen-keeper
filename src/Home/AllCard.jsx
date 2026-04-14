@@ -5,7 +5,7 @@ const AllCard = ({ friend }) => {
   console.log(friend);
   return (
     <div className="w-full max-w-75">
-      <Link className="card bg-base-100 w-full shadow-sm space-y-3 rounded-2xl flex flex-col h-full">
+      <Link to={`/FriendDetails/${friend.id}`} className="card bg-base-100 w-full shadow-sm space-y-3 rounded-2xl flex flex-col h-full">
         <figure className="px-10 pt-10">
           <img src={friend.picture} alt="Person" className="w-32 h-32 rounded-full object-cover" />
         </figure>
