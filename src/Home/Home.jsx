@@ -21,7 +21,7 @@ const Home = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 my-10">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-4 my-10">
         <div  className="bg-base-100 shadow-sm w-[259.5px] text-center p-6 space-y-3">
           <h2 className="font-bold text-2xl text-[#244D3f]">10</h2>
           <p className="text-[#64748bFF]">Total Friends</p>
