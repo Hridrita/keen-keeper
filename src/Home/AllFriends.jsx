@@ -9,8 +9,8 @@ const AllFriends = () => {
     console.log(friends);
     
     return (
-        <div>
-            
+        <div className='container mx-auto'>
+            <h2 className="font-semibold text-xl">Your Friends</h2>
         </div>
     );
 };

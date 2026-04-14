@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa6";
 
 const Banner = () => {
     return (
-        <div className="container mx-auto my-20 px-4 md:px-10">
+        <div className="container mx-auto my-20 px-4 md:px-10 max-w-7xl">
       <div>
         <h2 className="text-center font-bold text-3xl md:text-5xl">
           Friends to keep close in your life
