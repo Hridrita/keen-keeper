@@ -15,7 +15,7 @@ const AllFriends = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center'>
                 {
-                    friends.map(friend => <AllCard key={friend.id} friend={friend}></AllCard>)
+                    friends.map(friend => <AllCard key={friend.fid} friend={friend}></AllCard>)
                 }
             </div>
         </div>
