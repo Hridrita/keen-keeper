@@ -10,7 +10,7 @@ const AllFriends = () => {
     console.log(friends);
     
     return (
-        <div className='container mx-auto px-4 md:px-10 my-10'>
+        <div className='container mx-auto px-4 md:px-10 my-10 max-w-7xl'>
             <h2 className="font-semibold text-xl mb-4">Your Friends</h2>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center'>
