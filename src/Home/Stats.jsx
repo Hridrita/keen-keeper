@@ -24,7 +24,7 @@ const Stats = () => {
           <ResponsiveContainer>
             <PieChart>
               <Pie
-                data={chartData} // এখানে আমাদের তৈরি করা ডাটা
+                data={chartData} 
                 cx="50%"
                 cy="50%"
                 innerRadius={60}
@@ -44,9 +44,20 @@ const Stats = () => {
           </ResponsiveContainer>
         </div>
         <div className="flex gap-10 justify-center p-4">
-          <h3 className="text-[#64748bFF]">Text</h3>
-          <h3 className="text-[#64748bFF]">Call</h3>
-          <h3 className="text-[#64748bFF]">Video</h3>
+          <div className="flex gap-1 items-center">
+            <div className="w-2 h-2 border border-[#2D4F3F] bg-[#2D4F3F] rounded-full"></div>
+            <h3 className="text-[#64748bFF]">Text</h3>
+          </div>
+
+          <div className="flex gap-1 items-center">
+            <div className="w-2 h-2 border border-[#8B3DFF] bg-[#8B3DFF] rounded-full"></div>
+            <h3 className="text-[#64748bFF]">Video</h3>
+          </div>
+
+          <div className="flex gap-1 items-center">
+            <div className="w-2 h-2 border border-[#4CAF6C] bg-[#4CAF6C] rounded-full"></div>
+            <h3 className="text-[#64748bFF]">Call</h3>
+          </div>
         </div>
       </div>
     </div>
