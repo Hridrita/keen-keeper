@@ -16,12 +16,12 @@ const Stats = () => {
     value: interactionCounts[key],
   }));
   return (
-    <div className="container mx-auto max-w-7xl p-8">
-      <h2 className="font-bold text-3xl mb-3">Friendship Analytics</h2>
-      <div className="bg-base-100 shadow-sm">
+    <div className="container mx-auto max-w-7xl p-4 md:p-8">
+      <h2 className="font-bold text-2xl md:text-3xl mb-3">Friendship Analytics</h2>
+      <div className="bg-base-100 rounded-2xl shadow-sm overflow-hidden">
         <h2 className="p-3 text-[#244d3fFF]">By Interaction Type</h2>
-        <div style={{ width: "100%", height: 300 }}>
-          <ResponsiveContainer>
+        <div className="h-62.5 md:h-75 w-full">
+          <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
                 data={chartData} 
