@@ -16,7 +16,7 @@ const Timeline = () => {
     <div className="container mx-auto mt-20 max-w-7xl">
       <h2 className="text-2xl font-bold">Timeline</h2>
       {timeline.map((friend, ind) => (
-        <div className="flex gap-4 items-center bg-base-100 shadow-sm  m-3 p-5 rounded-xl" key={ind}>
+        <div className="flex gap-6 items-center bg-base-100 shadow-sm  m-3 p-5 rounded-xl" key={ind}>
           <div>
             {icons[friend.type]}
             </div>
