@@ -1,11 +1,56 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { PieChart, Pie, Tooltip, ResponsiveContainer, Cell } from "recharts";
+import { friendContext } from "../Context/FriendContext";
 
 const Stats = () => {
-    return (
-        <div>
-            <h2>Stats</h2>
+  const { timeline } = useContext(friendContext);
+  const COLORS = ["#2D4F3F", "#8B3DFF", "#4CAF6C"];
+
+  const interactionCounts = timeline.reduce((acc, item) => {
+    acc[item.type] = (acc[item.type] || 0) + 1;
+    return acc;
+  }, {});
+
+  const chartData = Object.keys(interactionCounts).map((key) => ({
+    name: key,
+    value: interactionCounts[key],
+  }));
+  return (
+    <div className="container mx-auto max-w-7xl p-8">
+      <h2 className="font-bold text-3xl mb-3">Friendship Analytics</h2>
+      <div className="bg-base-100 shadow-sm">
+        <h2 className="p-3 text-[#244d3fFF]">By Interaction Type</h2>
+        <div style={{ width: "100%", height: 300 }}>
+          <ResponsiveContainer>
+            <PieChart>
+              <Pie
+                data={chartData} // এখানে আমাদের তৈরি করা ডাটা
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={80}
+                paddingAngle={5}
+                dataKey="value"
+              >
+                {chartData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
         </div>
-    );
+        <div className="flex gap-10 justify-center p-4">
+          <h3 className="text-[#64748bFF]">Text</h3>
+          <h3 className="text-[#64748bFF]">Call</h3>
+          <h3 className="text-[#64748bFF]">Video</h3>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Stats;
