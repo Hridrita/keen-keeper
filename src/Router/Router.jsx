@@ -4,12 +4,14 @@ import Home from "../Home/Home";
 import Timeline from "../Home/Timeline";
 import Stats from "../Home/Stats";
 import FriendDetails from "../Home/FriendDetails";
+import ErrorPage from "../Home/ErrorPage";
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         index: true,
@@ -31,5 +33,6 @@ export const router = createBrowserRouter([
         loader: () => fetch("/friendsData.json")
       }
     ]
+    
    },
 ]);
