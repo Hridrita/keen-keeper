@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 import {
   FiPhone,
@@ -8,7 +8,7 @@ import {
   FiArchive,
   FiClock,
 } from "react-icons/fi"; 
-import { toast } from "react-toastify";
+
 import { friendContext } from "../Context/FriendContext";
 
 const FriendDetails = () => {

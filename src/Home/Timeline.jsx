@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"; // useState import koro
+import React, { useContext, useState } from "react"; // useState import koro
 import { friendContext } from "../Context/FriendContext";
 import { FiPhone, FiMessageSquare, FiVideo, FiFilter } from "react-icons/fi";
 
