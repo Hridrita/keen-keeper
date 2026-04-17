@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import Banner from "./Banner";
 import AllFriends from "./AllFriends";
@@ -8,7 +8,9 @@ const Home = () => {
   return (
     <div>
     <Banner></Banner>
-    <AllFriends></AllFriends>
+    <Suspense fallback={<span className="loading loading-spinner text-success"></span>}>
+      <AllFriends></AllFriends>
+    </Suspense>
     </div>
   );
 };
