@@ -4,7 +4,11 @@ import { friendContext } from "../Context/FriendContext";
 
 const Stats = () => {
   const { timeline } = useContext(friendContext);
-  const COLORS = ["#2D4F3F", "#8B3DFF", "#4CAF6C"];
+  const INTERACTION_COLORS = {
+    Text: "#2D4F3F",
+    Video: "#8B3DFF",
+    Call: "#4CAF6C",
+  };
 
   const interactionCounts = timeline.reduce((acc, item) => {
     acc[item.type] = (acc[item.type] || 0) + 1;
@@ -14,6 +18,7 @@ const Stats = () => {
   const chartData = Object.keys(interactionCounts).map((key) => ({
     name: key,
     value: interactionCounts[key],
+    color: INTERACTION_COLORS[key] || "#ddd",
   }));
   return (
     <div className="container mx-auto max-w-7xl p-4 md:p-8">
@@ -35,7 +40,7 @@ const Stats = () => {
                 {chartData.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
+                    fill={entry.color}
                   />
                 ))}
               </Pie>
