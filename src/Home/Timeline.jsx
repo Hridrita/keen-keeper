@@ -7,7 +7,9 @@ const Timeline = () => {
 
   const [filterType, setFilterType] = useState("All");
 
-  const [sortingType, setSortingType] = useState([]);
+  const [sortingType, setSortingType] = useState("");
+
+  const [searchFriend, setSearchFriend] = useState("");
 
   const icons = {
     Call: <FiPhone className="text-pink-500" />,
@@ -15,26 +17,28 @@ const Timeline = () => {
     Video: <FiVideo className="text-gray-600" />,
   };
 
-  
-
   let filteredTimeline = timeline.filter((item) => {
-    if (filterType === "All") return true;
-    return item.type === filterType;
-  });
+    
+    const matchesType = filterType === "All" || item.type === filterType;
+    
+    const matchesSearch = item.name.toLowerCase().includes(searchFriend.toLowerCase());
 
-  
-      if(sortingType === 'Date'){
-         filteredTimeline = [...filteredTimeline].sort((a, b) => new Date(b.date) - new Date(a.date));
-        }
+    return matchesType && matchesSearch;
 
-  
+    });
+
+  if (sortingType === "Date") {
+    filteredTimeline = [...filteredTimeline].sort(
+      (a, b) => new Date(b.date) - new Date(a.date),
+    );
+  }
 
   return (
     <div className="container mx-auto mt-20 max-w-7xl px-4">
       <div>
         <h2 className="text-2xl font-bold">Timeline</h2>
 
-        <div>
+        <div className="flex justify-between">
           <div className="dropdown dropdown-start">
             <div
               tabIndex={0}
@@ -47,11 +51,32 @@ const Timeline = () => {
               tabIndex="-1"
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
-              <li onClick={()=> setSortingType('Date')}>
+              <li onClick={() => setSortingType("Date")}>
                 <a>Date</a>
               </li>
             </ul>
           </div>
+
+          <label className="input">
+            <svg
+              className="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input onChange={(e) => setSearchFriend(e.target.value)} 
+          value={searchFriend} type="search" required placeholder="Search" />
+          </label>
         </div>
 
         <div className="my-4">
