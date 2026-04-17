@@ -38,7 +38,7 @@ const Timeline = () => {
       <div>
         <h2 className="text-2xl font-bold">Timeline</h2>
 
-        <div className="flex justify-between">
+        <div className="flex-col md:flex ">
           <div className="dropdown dropdown-start">
             <div
               tabIndex={0}
